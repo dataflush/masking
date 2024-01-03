@@ -1,0 +1,11 @@
+select
+	email,
+	concat
+		(
+			substring(email from 1 for 3),
+			'...',
+			substring(email from ((locate('@', email)) - 3) for 3),
+			'@',
+			substring_index(email, '@', -1)
+		) as email
+from users
