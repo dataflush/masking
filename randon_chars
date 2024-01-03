@@ -1,0 +1,27 @@
+
+select
+	concat(
+        char(65 + floor(rand() * 26)),
+        char(97 + floor(RAND() * 26)),
+        floor(rand() * 10),
+        char(65 + floor(rand() * 26)),
+        char(97 + floor(rand() * 26)),
+        floor(rand() * 10),
+        char(65 + floor(rand() * 26)),
+        char(97 + floor(rand() * 26)),
+        floor(rand() * 10),
+        char(65 + floor(rand() * 26)),
+        char(97 + floor(rand() * 26)),
+        floor(rand() * 10),
+        char(65 + floor(rand() * 26)),
+        char(97 + floor(rand() * 26)),
+        floor(rand() * 10),
+        char(65 + floor(rand() * 26)),
+        char(97 + floor(rand() * 26)),
+        floor(rand() * 10),
+        char(65 + floor(rand() * 26)),
+        char(97 + floor(rand() * 26)),
+        '@',
+		substring_index(email, '@', -1)
+    ) as email
+from users
